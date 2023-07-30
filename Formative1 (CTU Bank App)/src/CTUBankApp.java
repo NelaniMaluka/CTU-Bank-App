@@ -130,7 +130,8 @@ public class CTUBankApp {
         
         System.out.println("1) Transfer from balance to savings");
         System.out.println("2) Transfer from savings to balance");
-        System.out.println("3) Exit");
+        System.out.println("3) Intrest information");
+        System.out.println("4) Exit");
         
         System.out.println("\nN.B. Select a number (e.g 1) ");
         System.out.print("What would you like to do: ");
@@ -175,6 +176,29 @@ public class CTUBankApp {
               }
               
         } else if (selectedOption == 3){
+                  System.out.println("\n============================================");
+                  System.out.println("Intrest is earned on a monthly basis in the savings account.");
+                  System.out.println("Intrest amount changes with the account balance.\n");
+                  System.out.println("for R100 - R599 intrest is 0.5%");
+                  System.out.println("for R600 - R1000 intrest is 2%");
+                  System.out.println("for over R1000 intrest is 5%\n");
+                  
+                  System.out.println("1) Back");
+                  System.out.println("2) Exit");
+                  System.out.print("What would you like to do: ");
+                  
+                  selectedOption = scan.nextInt();
+                  
+                  if (selectedOption == 1){
+                      save(balance, savings, strDate);
+                  } else if (selectedOption == 2){
+                      exit();
+                  } else {
+                      System.out.println("\nError Wrong input \n");
+                      welcome(balance, savings, strDate);
+                  };
+         
+        } else if (selectedOption == 4){
               exit();
               
         } else {
