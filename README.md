@@ -13,6 +13,6 @@ The app usess one class and multiple imports  like java.text.DateFormat and Java
 
 <img align="left" src="Formative1 (CTU Bank App)/Screenshot (66).png"/>
 <img align="left" src="Formative1 (CTU Bank App)/Screenshot (69).png"/>
-<img align="left" src="Formative1 (CTU Bank App)/Screenshot (68).png" margin="20px"/>
+<img align="left" src="Formative1 (CTU Bank App)/Screenshot (68).png"/>
 
 
