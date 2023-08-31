@@ -26,7 +26,7 @@ public class CTUBankApp {
             a = reader.readLine(); 
             a = a.substring(10);
              
-        } catch(Exception e){ //If the file doesn't exist then it creates it and sets default amounts and time values
+        } catch(IOException e){ //If the file doesn't exist then it creates it and sets default amounts and time values
          
             File file = new File("amount.txt");
             FileWriter fw = new FileWriter(file);
@@ -42,30 +42,31 @@ public class CTUBankApp {
             pw.println("Savings: R" + 0);
             pw.println(strDate);
             pw.close();    
-        }
-              
-        int balance, savings;
-        String a, b, strDate ;
+        } finally {
         
-        //Specifies to read the file containing the amounts 
-        BufferedReader reader = new BufferedReader(new FileReader("amount.txt")); 
+            int balance, savings;
+            String a, b, strDate ;
         
-        //Reads the lines
-        a = reader.readLine(); 
-        b = reader.readLine();
-        strDate = reader.readLine();
-        reader.close();
+            //Specifies to read the file containing the amounts 
+            BufferedReader reader = new BufferedReader(new FileReader("amount.txt")); 
         
-        //Filters out the text
-        a = a.substring(10);
-        b = b.substring( 10);
+            //Reads the lines
+            a = reader.readLine(); 
+            b = reader.readLine();
+            strDate = reader.readLine();
+            reader.close();
+        
+            //Filters out the text
+            a = a.substring(10);
+            b = b.substring( 10);
        
-        //Converts the text to integers to be used in the code
-        balance = Integer.parseInt(a);
-        savings = Integer.parseInt(b);
+            //Converts the text to integers to be used in the code
+            balance = Integer.parseInt(a);
+            savings = Integer.parseInt(b);
         
-        updateAmount(balance, savings, strDate);//Runs the update method to create the file if it doesnt exist
-        home(balance, savings, strDate); //starts the program
+            updateAmount(balance, savings, strDate);//Runs the update method to create the file if it doesnt exist
+            home(balance, savings, strDate); //starts the program
+        }
     }; 
       
     public static void home(int balance, int savings, String strDate) throws IOException {
